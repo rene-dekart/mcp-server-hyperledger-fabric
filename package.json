@@ -1,0 +1,60 @@
+{
+  "name": "mcp-server-hyperledger-fabric",
+  "version": "0.1.0",
+  "description": "MCP server for Hyperledger Fabric — lets AI agents query/invoke chaincode, read blocks and events",
+  "license": "MIT",
+  "author": "dekart",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "hyperledger",
+    "fabric",
+    "blockchain",
+    "chaincode",
+    "claude",
+    "ai-agent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rene-dekart/mcp-server-hyperledger-fabric.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rene-dekart/mcp-server-hyperledger-fabric/issues"
+  },
+  "homepage": "https://github.com/rene-dekart/mcp-server-hyperledger-fabric#readme",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    ".mcp.example.json"
+  ],
+  "bin": {
+    "mcp-server-hyperledger-fabric": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "test": "node --import tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.0",
+    "@hyperledger/fabric-gateway": "^1.12.0",
+    "@hyperledger/fabric-protos": "^0.3.7",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.5.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.5",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.docker
+.mcp.json
+*.log
+chaincode-api/
+# identity material — never commit certs or keys
+*.pem
+*.key
+*.crt
+certs/
+wallets/

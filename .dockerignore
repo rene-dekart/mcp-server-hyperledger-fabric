@@ -1,0 +1,13 @@
+# never bake secrets / local artifacts into the image
+.env
+.env.docker
+*.log
+node_modules
+dist
+chaincode-api
+coverage
+.git
+test
+Dockerfile
+.dockerignore
+docker-compose.yml

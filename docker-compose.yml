@@ -1,0 +1,18 @@
+# MCP server for Hyperledger Fabric — run in Docker to see tool-call logs.
+# Build:  docker compose build
+# Test:   docker compose run --rm -T mcp-server-hyperledger-fabric   (MCP over stdio, no TTY)
+# Claude Code launches the same image with `docker compose run -T --rm` (see .env.docker).
+#
+# Paths are NOT hardcoded — set WALLET_DIR (and optionally CHAINCODE_API_DIR)
+# in your local `.env` (git-ignored). Defaults are project-relative.
+services:
+  mcp-server-hyperledger-fabric:
+    build: .
+    image: mcp-server-hyperledger-fabric:0.1.0
+    container_name: mcp-server-hyperledger-fabric
+    stdin_open: true # keep stdin open — MCP client drives the server
+    env_file: [.env.docker]
+    volumes:
+      - ${WALLET_DIR:-./wallets}:/wallets:ro # Fabric identity + TLS CA
+      - ${CHAINCODE_API_DIR:-./chaincode-api}:/app/chaincode-api:ro # scan output
+    restart: "no"

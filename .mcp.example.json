@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "fabric": {
+      "type": "stdio",
+      "command": "mcp-server-hyperledger-fabric",
+      "env": {
+        "FABRIC_PEER_ENDPOINT": "localhost:7051",
+        "FABRIC_CHANNEL": "mychannel",
+        "FABRIC_TLS": "true",
+        "FABRIC_PEER_TLS_CERT": "/path/to/peer-tls-ca.pem",
+        "FABRIC_MSP_ID": "Org1MSP",
+        "FABRIC_CERT": "/path/to/user-cert.pem",
+        "FABRIC_KEY": "/path/to/user-key.pem",
+        "FABRIC_CHAINCODE_API": "./chaincode-api"
+      }
+    }
+  }
+}

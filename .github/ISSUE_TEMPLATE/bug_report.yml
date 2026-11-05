@@ -1,0 +1,55 @@
+name: Bug report
+description: Something is broken — tool errors, connection failures, wrong results
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not paste private keys, certificates, or `transientData` values.**
+        Replace paths and identities with placeholders before submitting.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: The tool call, the expected result, and what came back instead.
+      placeholder: |
+        Called query_chaincode with channel=brics-chan, contract=AssetContract, method=GetAsset, args=["1"].
+        Expected the asset, got "chaincode response 500: ...".
+    validations:
+      required: true
+
+  - type: input
+    id: server-version
+    attributes:
+      label: Server version
+      description: Output of `npm ls -g mcp-server-hyperledger-fabric` or the commit SHA.
+    validations:
+      required: true
+
+  - type: input
+    id: fabric-version
+    attributes:
+      label: Fabric network
+      description: Fabric version, peer endpoint type (local test-network, Docker, managed), TLS on or off.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Server stderr
+      description: Lines starting with `[mcp-server-hyperledger-fabric]` from the client log or `docker logs`.
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: I removed keys, certificates, and private data from this report.
+          required: true
+        - label: I searched existing issues for the same problem.
+          required: true
