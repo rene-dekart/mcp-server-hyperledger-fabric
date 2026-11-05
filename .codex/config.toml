@@ -1,9 +1,0 @@
-[mcp_servers.hyperledger]
-command = "docker"
-args = [
-    "compose",
-    "run",
-    "-T",
-    "--rm",
-    "mcp-server-hyperledger-fabric",
-]

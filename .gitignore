@@ -5,6 +5,9 @@ dist/
 .mcp.json
 *.log
 chaincode-api/
+.serena/
+.codex/
+.claude/
 # identity material — never commit certs or keys
 *.pem
 *.key
