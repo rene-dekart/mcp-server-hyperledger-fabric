@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/rene-dekart/mcp-server-hyperledger-fabric/actions/workflows/ci.yml"><img src="https://github.com/rene-dekart/mcp-server-hyperledger-fabric/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://www.npmjs.com/package/mcp-server-hyperledger-fabric"><img src="https://img.shields.io/npm/v/mcp-server-hyperledger-fabric.svg" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/mcp-server-hyperledger-fabric"><img src="https://img.shields.io/npm/dw/mcp-server-hyperledger-fabric.svg" alt="npm downloads"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/node/v/mcp-server-hyperledger-fabric.svg" alt="node compatibility"></a>
